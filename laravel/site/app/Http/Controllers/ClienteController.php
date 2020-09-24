@@ -19,11 +19,8 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        echo '<ol>';
-        foreach ($this->clientes as $cliente) {
-            echo '<li>' . $cliente['nome'] . '</li>';
-        }
-        echo '</ol>';
+        $clientes = $this->clientes;
+        return view('clientes.index',compact(['clientes']));
     }
 
     /**
@@ -33,7 +30,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+        return view('clientes.create');
     }
 
     /**
@@ -44,7 +41,8 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dados = $request->all();
+        dd($dados);
     }
 
     /**
