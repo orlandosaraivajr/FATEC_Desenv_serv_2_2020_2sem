@@ -60,3 +60,10 @@ Route::put('/teste1', function () {});
 Route::delete('/teste1', function () {});
 Route::any('/teste3', function () {});
 Route::match([ 'get', 'post'], '/teste2', function () {});
+
+use App\Http\Controllers\TaskController;
+Route::get('/1', [TaskController::class, 'home']);
+Route::get('/2', [TaskController::class, 'home2']);
+
+use App\Http\Controllers\ClienteController;
+Route::resource('clientes', ClienteController::class);
