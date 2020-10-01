@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    public function home(){
-        return 'Oi dentro do TaskController';
+    public function controlador(){
+        return 'Oi, sou o Controlador';
     }
 
-    public function home2(){
-        return 'Segundo método do TaskController';
+    public function numero_dois(){
+        return 'Oi, sou o segundo método da TaskController';
     }
 }

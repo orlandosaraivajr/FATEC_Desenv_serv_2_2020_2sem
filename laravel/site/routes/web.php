@@ -62,8 +62,9 @@ Route::any('/teste3', function () {});
 Route::match([ 'get', 'post'], '/teste2', function () {});
 
 use App\Http\Controllers\TaskController;
-Route::get('/1', [TaskController::class, 'home']);
-Route::get('/2', [TaskController::class, 'home2']);
+
+Route::get('/1', [TaskController::class, 'controlador']);
+Route::get('/2', [TaskController::class, 'numero_dois']);
 
 use App\Http\Controllers\ClienteController;
-Route::resource('clientes', ClienteController::class);
+Route::resource('cliente', ClienteController::class);

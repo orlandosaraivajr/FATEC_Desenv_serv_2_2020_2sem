@@ -12,15 +12,14 @@ class ClienteController extends Controller
         ['id'=> 3, 'nome'=>'Lucas'],
         ['id'=> 4, 'nome'=>'Lourdes']
     ];
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        $clientes = $this->clientes;
-        return view('clientes.index',compact(['clientes']));
+        echo '<ol>';
+        foreach ($this->clientes as $cliente) {
+            echo '<li>' . $cliente['nome'] . '</li>';
+        }
+        echo '</ol>';
     }
 
     /**
@@ -30,7 +29,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        return view('clientes.create');
+        //
     }
 
     /**
@@ -41,8 +40,7 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        $dados = $request->all();
-        dd($dados);
+        //
     }
 
     /**
