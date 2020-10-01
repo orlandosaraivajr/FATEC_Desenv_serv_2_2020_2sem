@@ -15,32 +15,24 @@ class ClienteController extends Controller
 
     public function index()
     {
-        echo '<ol>';
-        foreach ($this->clientes as $cliente) {
-            echo '<li>' . $cliente['nome'] . '</li>';
-        }
-        echo '</ol>';
+      $clientes = $this->clientes;
+      return view('clientes.index', compact(['clientes']));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('clientes.create');   
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $id = count($this->clientes) + 1;
+        $nome = $request->nome;
+        $dados = ['id'=>$id, 'nome'=>$nome];
+        $this->clientes[] = $dados;
+        // dd($this->clientes);
+        $clientes = $this->clientes;
+        return view('clientes.index',compact(['clientes']));
     }
 
     /**
